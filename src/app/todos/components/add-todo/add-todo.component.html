@@ -1,0 +1,10 @@
+<form enctype="application/x-www-form-urlencoded" role="form" novalidate>
+    <input 
+        type="text" 
+        class="new-todo" 
+        placeholder="What needs to be done" 
+        autofocus
+        (keyup.enter)="addTodo()"
+        [formControl]="todoInput"    
+    >
+</form>

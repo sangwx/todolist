@@ -1,0 +1,24 @@
+<main class="todoapp">
+  <header class="header">
+    <h1>todos</h1>
+    <app-add-todo (saveTodo)="onSaveTodo($event)"></app-add-todo>
+  </header>
+  <div [hidden]="isShow">
+    <section class="main">
+      <input type="checkbox" class="toggle-all" [formControl]="toComplete">
+      <label for="toggle-all" (click)="toggleAll()"></label>
+      <app-todos-list [mode]="mode"></app-todos-list>
+    </section>
+    <app-footer 
+      [todoCount]="todoCount" 
+      [completeCount]="completeCount" 
+      [mode]="mode"
+      (clearComplete)="clearComplete()"
+    ></app-footer>
+  </div>
+</main>
+
+<footer class="info">
+  <p>Double-click to edit a todo</p>
+</footer>
+  
