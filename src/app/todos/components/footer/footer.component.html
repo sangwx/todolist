@@ -2,13 +2,13 @@
     <span class="todo-count">{{todoCount}} items left</span>
     <ul class="filters">
       <li>
-        <a [routerLink]="['', 'all']" [class.selected]="currentFilter=='all'">All</a>
+        <a [routerLink]="['', 'all']" [class.selected]="mode=='all'" (click)="changeMode('all')">All</a>
       </li>
       <li>
-        <a [routerLink]="['', 'active']" [class.selected]="currentFilter=='active'">Active</a>
+        <a [routerLink]="['', 'active']" [class.selected]="mode=='active'" (click)="changeMode('active')">Active</a>
       </li>
       <li>
-        <a [routerLink]="['', 'completed']" [class.selected]="currentFilter=='completed'">Completed</a>
+        <a [routerLink]="['', 'completed']" [class.selected]="mode=='completed'" (click)="changeMode('completed')">Completed</a>
       </li>
     </ul>
     <button class="clear-completed" [hidden]="completeCount===0" (click)="clearComplete.emit()">Clear completed</button>

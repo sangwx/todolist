@@ -13,17 +13,21 @@ import { select, Store } from '@ngrx/store';
 })
 export class FooterComponent implements OnInit {
 
-  currentFilter: FILTER_MODES = "all";
+  // currentFilter: FILTER_MODES = "all";
 
   @Input() todoCount: number;
   @Input() mode: FILTER_MODES;
   @Input() completeCount: number;
 
   @Output() clearComplete = new EventEmitter<void>(); 
+  @Output() setMode = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  changeMode(mode: string) {
+    this.setMode.emit(mode)
+  }
 }
